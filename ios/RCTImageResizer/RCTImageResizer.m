@@ -15,7 +15,7 @@
 
 RCT_EXPORT_MODULE();
 
-bool saveImage(NSString * fullPath, UIImage * image, NSString * format, float quality)
+bool saveImages(NSString * fullPath, UIImage * image, NSString * format, float quality)
 {
     NSData* data = nil;
     if ([format isEqualToString:@"JPEG"]) {
@@ -127,7 +127,7 @@ RCT_EXPORT_METHOD(createResizedImage:(NSString *)path
         }
 
         // Compress and save the image
-        if (!saveImage(fullPath, scaledImage, format, quality)) {
+        if (!saveImages(fullPath, scaledImage, format, quality)) {
             callback(@[@"Can't save the image. Check your compression format.", @""]);
             return;
         }
