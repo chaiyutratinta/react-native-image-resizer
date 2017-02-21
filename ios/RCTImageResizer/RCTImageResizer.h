@@ -1,4 +1,4 @@
-#import <React/RCTBridge.h>
+#import "RCTBridgeModule.h"
 
 @interface ImageResizer : NSObject <RCTBridgeModule>
 
